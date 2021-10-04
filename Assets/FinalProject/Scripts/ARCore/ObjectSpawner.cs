@@ -15,7 +15,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         placementIndicator = FindObjectOfType<PlacementIndicator>();
         marker = placementIndicator.gameObject.transform.GetChild(0).gameObject;
-        arManager = FindObjectOfType<ARManager>();
+        //arManager = FindObjectOfType<ARManager>();
         myParent = new GameObject();
     }
 
@@ -62,27 +62,27 @@ public class ObjectSpawner : MonoBehaviour
             GameObject obj = Instantiate(objectToSpawn, new Vector3(marker.transform.position.x, marker.transform.position.y + .05f, marker.transform.position.z),
                     placementIndicator.transform.rotation);
             obj.transform.parent = myParent.transform;
-            if (!arManager.isARF)
-            {
-                //if (objectToSpawn)
-                //{
-                //    myObj = GameObject.Instantiate(objectToSpawn);
-                //}
-                //else
-                //{
-                //    myObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                //}
-                //myObj.transform.parent = myParent.transform;
-                //myObj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
-                //myObj.transform.localScale = new Vector3(5, 5, 5);
-                //obj.transform.localScale = new Vector3(1, 1, 1);
-                //obj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
-            }
+            //if (!arManager.isARF)
+            //{
+            //    if (objectToSpawn)
+            //    {
+            //        myObj = GameObject.Instantiate(objectToSpawn);
+            //    }
+            //    else
+            //    {
+            //        myObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //    }
+            //    myObj.transform.parent = myParent.transform;
+            //    myObj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
+            //    myObj.transform.localScale = new Vector3(5, 5, 5);
+            //    obj.transform.localScale = new Vector3(1, 1, 1);
+            //    obj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
+            //}
             //else
-            // {
-            //     GameObject obj = Instantiate(objectToSpawn, placementIndicator.transform.position,
-            //             placementIndicator.transform.rotation);
-            // }
+            //{
+            //    GameObject obj = Instantiate(objectToSpawn, placementIndicator.transform.position,
+            //            placementIndicator.transform.rotation);
+            //}
         }
 
     }

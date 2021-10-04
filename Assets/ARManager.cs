@@ -28,7 +28,6 @@ public class ARManager : MonoBehaviour
         {
             // Start some fallback experience for unsupported devices
             m_Session.enabled = false;
-            //ARSessionOrigin.SetActive(false);
             XR8thWall.SetActive(true);
             isARF = false;
         }
@@ -36,10 +35,8 @@ public class ARManager : MonoBehaviour
         {
             // Start the AR session
             m_Session.enabled = true;
-           // ARSessionOrigin.SetActive(true);
             XR8thWall.SetActive(false);
             isARF = true;
-            //XR8thWall.GetComponentInChildren<XRController>().GetCapabilities().
         }
         debug.text = "ARCore : " + ARSession.state.ToString() + "\nXRController: " + XR8thWall.activeSelf;
     }

@@ -6,8 +6,9 @@ using UnityEngine.XR.ARSubsystems;
 public class PlacementIndicator : MonoBehaviour
 {
     private ARRaycastManager rayManager;
-    private GameObject marker;
     private ARManager ARManager;
+    private GameObject marker;
+    [SerializeField] GameObject handCanvas;
     [SerializeField]private Camera XRCamera;
     public bool isARCoreReady = false, isSurfaceReady;
 
@@ -16,20 +17,11 @@ public class PlacementIndicator : MonoBehaviour
         rayManager = FindObjectOfType<ARRaycastManager>();
         ARManager = FindObjectOfType<ARManager>();
     }
+
     private void Start()
     {
-
         marker = transform.GetChild(0).gameObject;
-        if (!ARManager.isARF)//Tidak support ARCore
-        {
-            //marker.transform.localScale = Vector3.one;
-            marker.SetActive(false);
-        }
-        else
-        {
-            marker.SetActive(false);
-            //StartCoroutine(InitARCoreMarker());
-        }
+        handCanvas.SetActive(false);
     }
 
     private void Update()
@@ -44,7 +36,6 @@ public class PlacementIndicator : MonoBehaviour
             //marker.transform.position = XRCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, DistanceFromCamera()));
             RaycastHit hit;
             Ray ray = XRCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-            //Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             // The "Surface" GameObject with an XRSurfaceController attached should be on layer "Surface"
             // If tap hits surface, place object on surface
             if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("Surface")))
@@ -77,7 +68,17 @@ public class PlacementIndicator : MonoBehaviour
             else
             {
                 isSurfaceReady = false;
+                marker.SetActive(false);
             }
+        }
+
+        if (isSurfaceReady)
+        {
+            handCanvas.SetActive(false);
+        }
+        else
+        {
+            handCanvas.SetActive(true);
         }
     }
     
