@@ -22,7 +22,7 @@ public class ObjectSpawner : MonoBehaviour
     void Update()
     {
         spawnCount.text = "Lingkaran: " + placementIndicator.transform.GetChild(0).gameObject.activeSelf + "\nObject Count: " + myParent.transform.childCount
-                            + "\nSurface: " + placementIndicator.isSurfaceReady;
+                            + "\nSurface(ARCore): " + placementIndicator.isSurfaceReady;
         //if (Input.touchCount == 0 && Input.touches[0].phase == TouchPhase.Began)
         //{
 
@@ -58,7 +58,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         if (placementIndicator.transform.GetChild(0).gameObject.activeSelf)
         {
-            GameObject obj = Instantiate(objectToSpawn, placementIndicator.transform.position,
+            GameObject obj = Instantiate(objectToSpawn, placementIndicator.transform.GetChild(0).transform.position,
                     placementIndicator.transform.rotation);
             obj.transform.parent = myParent.transform;
             if (!arManager.isARF)
@@ -75,6 +75,7 @@ public class ObjectSpawner : MonoBehaviour
                 //myObj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
                 //myObj.transform.localScale = new Vector3(5, 5, 5);
                 obj.transform.localScale = new Vector3(5, 5, 5);
+                //obj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
             }
             //else
             // {
