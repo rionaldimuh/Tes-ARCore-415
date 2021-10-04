@@ -39,6 +39,7 @@ public class ARManager : MonoBehaviour
            // ARSessionOrigin.SetActive(true);
             XR8thWall.SetActive(false);
             isARF = true;
+            //XR8thWall.GetComponentInChildren<XRController>().GetCapabilities().
         }
         debug.text = "ARCore : " + ARSession.state.ToString() + "\nXRController: " + XR8thWall.activeSelf;
     }

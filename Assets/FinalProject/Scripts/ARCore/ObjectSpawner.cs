@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ObjectSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn;
-    GameObject myObj, myParent;
+    GameObject myObj, myParent, marker;
     private PlacementIndicator placementIndicator;
     ARManager arManager;
     [SerializeField]Text spawnCount;
@@ -14,6 +14,7 @@ public class ObjectSpawner : MonoBehaviour
     void Start()
     {
         placementIndicator = FindObjectOfType<PlacementIndicator>();
+        marker = placementIndicator.gameObject.transform.GetChild(0).gameObject;
         arManager = FindObjectOfType<ARManager>();
         myParent = new GameObject();
     }
@@ -22,7 +23,7 @@ public class ObjectSpawner : MonoBehaviour
     void Update()
     {
         spawnCount.text = "Lingkaran: " + placementIndicator.transform.GetChild(0).gameObject.activeSelf + "\nObject Count: " + myParent.transform.childCount
-                            + "\nSurface(ARCore): " + placementIndicator.isSurfaceReady;
+                            + "\nSurface : " + placementIndicator.isSurfaceReady;
         //if (Input.touchCount == 0 && Input.touches[0].phase == TouchPhase.Began)
         //{
 
@@ -56,9 +57,9 @@ public class ObjectSpawner : MonoBehaviour
 
     public void SpawnObject()
     {
-        if (placementIndicator.transform.GetChild(0).gameObject.activeSelf)
+        if (placementIndicator.isSurfaceReady)
         {
-            GameObject obj = Instantiate(objectToSpawn, placementIndicator.transform.GetChild(0).transform.position,
+            GameObject obj = Instantiate(objectToSpawn, new Vector3(marker.transform.position.x, marker.transform.position.y + .05f, marker.transform.position.z),
                     placementIndicator.transform.rotation);
             obj.transform.parent = myParent.transform;
             if (!arManager.isARF)
@@ -74,7 +75,7 @@ public class ObjectSpawner : MonoBehaviour
                 //myObj.transform.parent = myParent.transform;
                 //myObj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
                 //myObj.transform.localScale = new Vector3(5, 5, 5);
-                obj.transform.localScale = new Vector3(5, 5, 5);
+                //obj.transform.localScale = new Vector3(1, 1, 1);
                 //obj.transform.position = placementIndicator.transform.GetChild(0).transform.position;
             }
             //else
