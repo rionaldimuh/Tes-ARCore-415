@@ -1,0 +1,4 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+Assets\Plugins\iOS/libXRPlugin.a filter=lfs diff=lfs merge=lfs -text
+libXRPlugin.a filter=lfs diff=lfs merge=lfs -text

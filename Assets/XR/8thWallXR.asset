@@ -1,0 +1,343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 682965911, guid: f7fff1a98506b0033937160dbbe857ba, type: 3}
+  m_Name: 8thWallXR
+  m_EditorClassIdentifier: 
+  allChannels:
+  - release
+  - beta
+  channel: release
+  installedChannel: release
+  version: 14.0.7.949
+  autoUpdate: 1
+  autoUpdateSec: 3600
+  updateTimeoutSec: 25
+  downloadTimeoutSec: 600
+  updateAvailable: 0
+  releaseNotes:
+  - id: 17.1
+    notes: "## Release 17.1\n\nNew Features:\n- Added new APIs\n   - API to query
+      the engine initialization state.\n   - Three.js camera feed is available as
+      a THREE.Texture.\n   - Lifecycle method for pipeline module removal.\n\nFixes
+      and Enhancements:\n- Enhanced SLAM map building quality.\n- Improved tracking
+      quality on a wide range of devices.  \n- Improved frame rate of World Effects,
+      Face Effects, & Image Target experiences on Chromium-based and Firefox browsers.\n-
+      Improved MediaRecorder video quality on Android devices. \n\nXRExtras Enhancements:\n-
+      Enhanced MediaRecorder share flow when Web Share API Level 2 is enabled.\n-
+      Improved startup time of Loading module.\n- Improved lifecycle handling for
+      Runtime Error, Almost There and Loading modules.\n- Updated the Almost There
+      module to improve the success of QR Code scans. \n- Improved Full Window Canvas
+      logic on iPad split screen views.\n"
+  - id: 17
+    notes: "## Release 17\n\n### 8th Wall Web\n\nFixes and Enhancements:\n - Enhanced
+      above-horizon tracking boosts map quality improving the performance of WebAR
+      experiences that ask users to point their phones up to fully explore AR content.\n-
+      Optimized SLAM relocalization snaps AR content back to the proper position
+      in world space after an interruption.\n- Improved tracking quality of SLAM
+      experiences when users make extreme yaw movements.\n\nXRExtras Enhancements:\n-
+      Updated MediaRecorder to return to the media preview when users press the \u201Cview\u201D
+      button on the iOS dialog box after choosing to download media\n"
+  - id: 16.1
+    notes: '## Release 16.1
+
+
+      ### 8th Wall Web
+
+
+      Fixes and Enhancements:
+
+      *
+      Improved recovery of world tracking after an interruption.
+
+      * Improved
+      lifecycle management of event listeners in A-Frame projects.
+
+      * Fixed
+      an issue with WebGL 1 errors on some Android devices.
+
+      * Fixed an issue
+      where MediaRecorder would occasionally not render a recording preview.
+
+      *
+      Fixed an issue where swapping the camera multiple times could result in crashing.
+
+      *
+      Improved compatibility using canvases with pre-defined WebGL 2 contexts.
+
+'
+  - id: 16
+    notes: "## Release 16\n\n### 8th Wall Web\n\nNew Features:\n - Introducing the
+      all-new 8th Wall MediaRecorder:\n   - Uses W3C web standards compliant recording
+      when available.\n   - Optimizes performance to improve frame rate during recording.\n  
+      - Enhancements to image quality and frame rate of recording.\n\nFixes and Enhancements:\n-
+      Improved tracking quality and frame rate of SLAM experiences.\n- Improved tracking
+      quality and frame rate of Image Target experiences.\n- Improved experience
+      for some Android devices with multiple cameras.\n- Fixed raycasting issues
+      with PlayCanvas.\n\nXRExtras Enhancements:\n- Updated MediaRecorder to provide
+      a progress bar while transcoding recordings on relevant devices."
+  - id: 15.3
+    notes: '## Release 15.3
+
+
+      ### 8th Wall Web
+
+
+      New Features:
+
+      *
+      Updated 8Frame to support A-Frame 1.2.0.
+
+
+      Fixes and Enhancements:
+
+      *
+      Fixed an issue with resuming the camera feed in Safari after navigating back
+      to an 8th Wall app
+
+      * Fixed an issue with resuming the camera feed after
+      re-opening a WKWebView
+
+      * Improved compatibility with different rendering
+      engine versions.
+
+      * Optimized iOS WKWebView flows for some native apps.'
+  - id: 15.2
+    notes: '## Release 15.2
+
+
+      ### 8th Wall Web
+
+
+      New Features:
+
+      *
+      Added support for WKWebView on devices running iOS 14.3 or later.
+
+      *
+      Made a compute context accessible to Pipeline Modules to accelerate offscreen
+      GPU computer vision.
+
+      * Updated 8Frame to support A-Frame 1.1.0.
+
+
+      Fixes
+      and Enhancements:
+
+      * Improved compatibility with rendering engines.
+
+      *
+      Added the ability to load and unload image targets while tracking other image
+      targets.
+
+      * Fixed an issue with MediaRecorder related to audio context
+      switching.
+
+      * Improved experience for some Android devices with multiple
+      cameras.
+
+      * Fixed an issue where WebGL errors would sometimes be hidden.
+
+      *
+      Fixed an issue with simultaneously tracking flat and curved image targets.
+
+      *
+      Fixed an issue with switching between WebGL and WebGL2 pipelines.
+
+
+
+      XRExtras
+      Enhancements:
+
+      * Improved flows for iOS WKWebView on devices running
+      iOS 14.3 or later.
+
+      * Fixed an issue with Stats module pipeline detach.'
+  - id: 15.1
+    notes: '## Release 15.1
+
+
+      ### 8th Wall Web
+
+
+      New Features:
+
+      *
+      Added support for Curved Image Targets to be used simultaneously with SLAM.
+
+      *
+      Added support for A-Frame 1.1.0-beta, THREE 120, and MRCS HoloVideoObject 1.2.5.
+
+
+      Fixes
+      and Enhancements:
+
+      * Improved quality of tracking Flat Image Targets
+      simultaneously with SLAM.
+
+      * Improved framerate for devices with iOS
+      14 or greater.
+
+      * Improved experience for some Android devices with multiple
+      cameras. (v15.0.9.487)
+
+      * Optimized performance of some GPU processing.
+
+      *
+      Enhanced PlayCanvas integration with support for switching between XR and FaceController
+      cameras.
+
+      * Fixed an issue with MediaRecorder microphone access where
+      onPause events were not closing the microphone input.
+
+      * Fixed an issue
+      with MediaRecorder occasionally producing files incompatible with some video
+      players.
+
+      * Fixed a raycasting issue with AFrame 1.0.x. (v15.0.9.487)
+
+
+      XRExtras
+      Enhancements:
+
+      * XRExtras.PauseOnHidden() module pauses the camera feed
+      when your browser tab is hidden.'
+  - id: 15
+    notes: "## Release 15\n\n### 8th Wall Web\n\nNew Features:\n - 8th Wall Curved
+      Image Targets:\n   - Added support for cylindrical image targets such as those
+      wrapped around bottles, cans and more.\n   - Added support for conical image
+      targets such as those wrapped around coffee cups, party hats, lampshades and
+      more.\n\nFixes and Enhancements:\n- Improved tracking quality for SLAM and
+      Image Targets.\n- Fixed an issue with MRCS Holograms and device routing on
+      iOS 14. \n- Fixed an issue with Face Effects and Image Targets where updates
+      to mirroredDisplay were not reflected during runtime.\n- Improved experience
+      for some Android devices with multiple cameras (v15.0.9.487)\n- Fixed a raycasting
+      issue with AFrame 1.0.x (v15.0.9.487)\n\nXRExtras Enhancements:\n- New AFrame
+      components for easy Curved Image Target development:\n   - 3D container prefab
+      component that forms a portal-like container that 3D content can be placed
+      inside.\n   - Video playback prefab component for easily enabling video on
+      curved image targets.\n- Improved detection of Web Share API Level 2 support."
+  - id: 14
+    notes: '## Release 14
+
+
+      ### 8th Wall Web
+
+      New Features:
+
+      -
+      Introducing 8th Wall Face Effects: Attach 3D objects to face attachment points
+      and paint your face with custom materials, shaders or videos.
+
+      - Selfie
+      Mode: Use the front camera with a mirrored display to get the perfect selfie
+      shot.
+
+      - Desktop Browsers: Enable your image target and face effect experiences
+      to run in desktop browsers utilizing the webcam.
+
+
+      Fixes and Enhancements:
+
+      -
+      Enhanced capture field of view on Pixel 4/4XL phones.
+
+      - Enhanced camera
+      profiles for certain phone models.
+
+      - Fixed an issue with changing device
+      orientation during startup.
+
+      - Fixed an issue with swapping the camera
+      direction on the same a-scene.
+
+      - Fixed an issue with AFrame look-controls
+      not being removed on scene restart.
+
+      - Improved experience for some Android
+      phones with multiple cameras.
+
+      - Other fixes and enhancements.
+
+
+      XRExtras
+      Enhancements:
+
+      - Enhanced almost there flows for experiences that can
+      be viewed on desktop.
+
+      - PauseOnBlur module stops the camera when your
+      tab is not active.
+
+      - New AFrame components for easy face effects and
+      desktop experience development.
+
+      - New ThreeExtras for rendering PBR
+      materials, basic materials, and videos to faces.
+
+
+      ### Unity
+
+
+      Fixes
+      and Enhancements:
+
+      - Update to XCode build postprocessor supports new
+      Unity APIs.'
+  - id: 13.2
+    notes: '## Release 13.2
+
+
+      ### 8th Wall Web
+
+      New Features:
+
+      -
+      Release camera stream on XR8.pause and reopen on XR8.resume.
+
+      - Added
+      API to access shader program and modify uniforms used by GlTextureRenderer.
+
+      -
+      Added API to configure WebGL context on run.
+
+
+      Fixes and Enhancements:
+
+      -
+      Fix black video issue on iOS when a user long-presses on an image.
+
+      -
+      Improved iOS screenshot capture speed and reliability.
+
+      - Fixed alpha
+      channel rendering when taking a screenshot.
+
+      - Improved experience for
+      some Android phones with multiple cameras.
+
+      - Improved detection of social
+      network web views.
+
+
+      XRExtras Enhancements:
+
+      - Improved QR codes
+      with better compatibility with native cameras.
+
+      - Improved link out flows
+      for social networks.
+
+      - Improved CSS customization.
+
+
+
+'
