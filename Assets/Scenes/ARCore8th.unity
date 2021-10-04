@@ -985,7 +985,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887114958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3859a92a05d4f5d418cb6ca605290e74, type: 3}
   m_Name: 
@@ -1639,7 +1639,7 @@ MonoBehaviour:
   m_Session: {fileID: 887114960}
   XR8thWall: {fileID: 1659274179}
   ARSessionOrigin: {fileID: 1887199411}
-  isARF: 0
+  SDK: 0
   debug: {fileID: 1329270141}
 --- !u!4 &1495510499
 Transform:

@@ -31,7 +31,7 @@ public class PlacementIndicator : MonoBehaviour
 
     void MarkerMove()
     {
-        if (!ARManager.isARF) //Non ARCore
+        if (ARManager.SDK == ARManager.AR.XR8thWall) //Non ARCore
         {
             //marker.transform.position = XRCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, DistanceFromCamera()));
             RaycastHit hit;

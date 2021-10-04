@@ -62,7 +62,7 @@ public class ObjectSpawner : MonoBehaviour
             GameObject obj = Instantiate(objectToSpawn, new Vector3(marker.transform.position.x, marker.transform.position.y + .05f, marker.transform.position.z),
                     placementIndicator.transform.rotation);
             obj.transform.parent = myParent.transform;
-            //if (!arManager.isARF)
+           //if (arManager.SDK == ARManager.AR.XR8thWall)
             //{
             //    if (objectToSpawn)
             //    {
