@@ -11,7 +11,7 @@ public class ARManager : MonoBehaviour
     [SerializeField]GameObject XR8thWall, ARSessionOrigin;
     public enum AR { ARCore, XR8thWall}
     public AR SDK;
-    [SerializeField] Text debug;
+    [SerializeField] Text debug, sdkAR_text;
     private void Awake()
     {
         StartCoroutine(Start());
@@ -31,6 +31,7 @@ public class ARManager : MonoBehaviour
             m_Session.enabled = false;
             XR8thWall.SetActive(true);
             SDK = AR.XR8thWall;
+            sdkAR_text.text = "8thWall";
         }
         else
         {
@@ -38,8 +39,10 @@ public class ARManager : MonoBehaviour
             m_Session.enabled = true;
             XR8thWall.SetActive(false);
             SDK = AR.ARCore;
+            sdkAR_text.text = "ARCore";
         }
-        debug.text = "ARCore : " + ARSession.state.ToString() + "\nXRController: " + XR8thWall.activeSelf;
+        //debug.text = "ARCore : " + ARSession.state.ToString() + "\nXRController: " + XR8thWall.activeSelf;
+
     }
 
 }

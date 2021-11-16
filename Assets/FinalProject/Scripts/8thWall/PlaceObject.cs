@@ -34,19 +34,10 @@ public class PlaceObject : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("Surface")))
             {
                 CreateObject(marker.transform.position);
-                //CreateObject(new Vector3(hit.point.x, hit.point.y + heightAdjustment, hit.point.z));
-
             }
             else
             {
                 CreateObject(marker.transform.position);
-                //// It tap doesn't hit surface, place in "air" at touch point in front of camera at a distance of distanceFromCamera
-                //Vector3 touchPos = Input.GetTouch(0).position;
-                //touchPos.y = touchPos.y + heightAdjustment;
-                //touchPos.z = distanceFromCamera;
-
-                //Vector3 objPos = Camera.main.ScreenToWorldPoint(touchPos);
-
             }
         }
         MarkerMove();
@@ -54,13 +45,18 @@ public class PlaceObject : MonoBehaviour
 
     void MarkerMove()
     {
-        marker.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, DistanceFromCamera()));
-    }
-
-    public float DistanceFromCamera()
-    {
-        distanceFromCamera = 90 - Camera.main.transform.eulerAngles.x;
-        return distanceFromCamera;
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
+        // The "Surface" GameObject with an XRSurfaceController attached should be on layer "Surface"
+        // If tap hits surface, place object on surface
+        if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("Surface")))
+        {
+            marker.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+        }
+        else
+        {
+            
+        }
     }
 
     public void ShowMarker()

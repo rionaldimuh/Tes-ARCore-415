@@ -33,9 +33,8 @@ public class PlacementIndicator : MonoBehaviour
     {
         if (ARManager.SDK == ARManager.AR.XR8thWall) //Non ARCore
         {
-            //marker.transform.position = XRCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, DistanceFromCamera()));
             RaycastHit hit;
-            Ray ray = XRCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+            Ray ray = XRCamera.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
             // The "Surface" GameObject with an XRSurfaceController attached should be on layer "Surface"
             // If tap hits surface, place object on surface
             if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("Surface")))
@@ -54,8 +53,9 @@ public class PlacementIndicator : MonoBehaviour
         {
             //shoot a raycast fromt he center of the screen
             List<ARRaycastHit> hits = new List<ARRaycastHit>();
-            rayManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.Planes);
-
+            var ray = new Vector2(Screen.width / 2, Screen.height / 2);
+            rayManager.Raycast(ray, hits, TrackableType.Planes);
+            
             //if we hit an AR plane, update the position and rotation
             if (hits.Count > 0)
             {
