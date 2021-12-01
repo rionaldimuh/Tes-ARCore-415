@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95939225387",
+    "project_id": "fpsmagick-e83fc",
+    "storage_bucket": "fpsmagick-e83fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95939225387:android:f947e702970edc27d3476e",
+        "android_client_info": {
+          "package_name": "com.assemblr.internshipunity3d"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95939225387-76eu1mut4qvgieqpvm922cg18rrshcjn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXIHIpVACWKMEMVDohYb8ICsqSkDRKLeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95939225387-76eu1mut4qvgieqpvm922cg18rrshcjn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
