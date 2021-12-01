@@ -5,33 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/FinalProject/Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
     guid: 27198ff4e8e2d014794cbd35078ccbe4
-  - enabled: 0
-    path: Assets/FinalProject/Scenes/ARCore.unity
+  - enabled: 1
+    path: Assets/Scenes/ARCore.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/FinalProject/Scenes/8thWall.unity
+  - enabled: 1
+    path: Assets/Scenes/8thWall.unity
     guid: 35b93b7331bc9944dab2ea6aef4f1d7e
-  - enabled: 0
-    path: Assets/FinalProject/Scenes/ARCore8th.unity
+  - enabled: 1
+    path: Assets/Scenes/ARCore8th.unity
     guid: 3f6d18c135f767945be31a2c0449acee
   - enabled: 0
-    path: Assets/FinalProject/Scenes/Scene Tes ARCore.unity
+    path: Assets/Scenes/Scene Tes ARCore.unity
     guid: 22a4120cc437caa449c661e4a1e3b490
   - enabled: 0
-    path: Assets/FinalProject/Scenes/Scene Tes 8thWall.unity
+    path: Assets/Scenes/Scene Tes 8thWall.unity
     guid: eeecddc01618ec64a97932b14ea43d0e
-  - enabled: 0
-    path: Assets/FinalProject/Scenes/Tugas Baru/NativeGallery.unity
-    guid: 9f4af54c7c1d9f941bcd5a7aac815921
-  - enabled: 0
-    path: Assets/FinalProject/Scenes/Tugas Baru/NativeCamera.unity
-    guid: 5d9b03e08c4b9ec4c91d7b43955bacc9
-  - enabled: 1
-    path: Assets/FinalProject/Scenes/Tugas Baru/NativeShare.unity
-    guid: fa8f43668d9fafe4988394ef1cc248eb
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8bd836fa7c8b05241aae6b5c17c74f96,
       type: 2}
